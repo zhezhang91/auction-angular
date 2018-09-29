@@ -1,0 +1,25 @@
+<div class="thumbnail">
+  <img src="http://via.placeholder.com/820x230">
+  <div>
+    <h4 class="pull-right">{{product.price}} dollars</h4>
+    <h4>{{product.title}}</h4>
+    <p>{{product.descri}}</p>
+  </div>
+  <div>
+    <p class="pull-right">{{comments.length}}</p>
+    <p>
+      <app-stars [rating]="product.rating"></app-stars>
+    </p>
+  </div>
+</div>
+
+  <div class="row well" *ngFor="let comment of comments">
+    <hr>
+    <div class="col-md-12">
+      <app-stars [rating]="comment.rating"></app-stars>
+      <span>{{comment.user}}</span>
+      <span class="pull-right">{{comment.timestamp}}</span>
+      <p>{{comment.content}}</p>
+    </div>
+  </div>
+
